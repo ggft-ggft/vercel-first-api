@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "cp lib/*so.1 node_modules/canvas/build/Release/",
+    "vercel-build": "yum install libuuid-devel libmount-devel && cp /lib/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run build",
     "start": "next start",
     "export": "next build && next export"
   },
